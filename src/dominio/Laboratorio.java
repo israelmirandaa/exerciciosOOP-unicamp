@@ -7,39 +7,51 @@ public class Laboratorio implements Ferramentas {
 
     @Override
     public Animal[] filtraEspecie(Animal[] completo, String especieFiltrar) {
-        int j = 1;
-        Animal[] especieFiltrada = new Animal[j];
-        Animal[] especies = new Animal[especieFiltrada.length - 1];
+        int j = 0;
+
+        Animal[] especies = new Animal[completo.length];
 
 
         for (int i = 0; i < completo.length; i++) {
-            if (completo[i].getNomeEspecie().equals(especieFiltrar)) {
-                especieFiltrada[j - 1] = completo[i];
-                j++;
+            if (completo[i] != null && completo[i].getNomeEspecie().equals(especieFiltrar)) {
 
-                especies[i] = especieFiltrada[i];
+                especies[j] = completo[i];
+
+
+                j++;
 
             }
         }
+        Animal[] especieFiltrada = new Animal[j];
 
-        return especies;
+        for (int k = 0; k < especies.length; k++) {
+            if (especies[k] != null) {
+                especieFiltrada[k] = especies[k];
+            }
+
+        }
+
+
+        return especieFiltrada;
     }
 
     @Override
     public String[] classificaEspecie(Animal[] completo) {
         int k = 1;
-        String[] especies = new String[k];
+        Animal[] especiesClass = new Animal[completo.length];
 
 
-        for (int i = completo.length-1; i >= 1; i--) {
-            if (completo[i].getNomeEspecie().equals(completo[i-1].getNomeEspecie())) {
-                completo[i] = null;
+        for (int i = completo.length - 1; i >= 1; i--) {
+            especiesClass[i] = completo[i];
+            especiesClass[i-1] = completo[i-1];
+            if (completo[i].getNomeEspecie().equals(completo[i - 1].getNomeEspecie())) {
+                especiesClass[i] = null;
                 continue;
 
             }
             k++;
         }
-        especies = new String[k];
+        String[] especies = new String[k];
 
         for (int j = 0; j < especies.length; j++) {
             if (completo[j] != null) {

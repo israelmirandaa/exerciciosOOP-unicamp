@@ -12,16 +12,34 @@ public class Exercicio1Test01 {
         Laboratorio laboratorio = new Laboratorio();
 
 
-        for (String j : laboratorio.classificaEspecie(animalArray)) {
-            System.out.println(j);
-        }
+
+
+
+       for (Resultado result : test(animalArray, laboratorio)) {
+           System.out.println(result.getNomeEspecie());
+           System.out.println(result.getQuantidade());
+       }
     }
 
 
-        public static void test (Animal[]animal, Ferramentas ferramentas){
-            System.out.println();
+    public static Resultado[] test(Animal[] animal, Ferramentas ferramentas) {
+        Animal[] especies = animal;
+        String[] especiesEncontrados = ferramentas.classificaEspecie(especies);
 
+        int[] n = new int[especiesEncontrados.length];
+
+        Animal[] retur;
+        Resultado[] resultados = new Resultado[especiesEncontrados.length];
+
+        for (int i = 0; i < especiesEncontrados.length; i++) {
+            retur = ferramentas.filtraEspecie(especies, especiesEncontrados[i]);
+            n[i] = retur.length;
+            resultados[i] = new Resultado(retur[0].getNomeEspecie(),n[i]);
         }
+
+        return resultados;
+
+    }
 
 
 
