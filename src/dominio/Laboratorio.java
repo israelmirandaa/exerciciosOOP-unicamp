@@ -67,43 +67,27 @@ public class Laboratorio implements Ferramentas {
     //   return especiesClass;
     // }
     public String[] classificaEspecie(Animal[] completo) {
-        // Lista para armazenar espécies únicas
-        List<String> especiesUnicas = new ArrayList<>();
+
+        List<String> especiesEncontradas = new ArrayList<>();
         String[] especies = new String[completo.length];
-        especies = test2(completo);
 
-        // Verifica cada animal no array
+        String[] animaisArray = new String[completo.length];
+
         for (int i = 0; i < completo.length; i++) {
+            animaisArray[i] = completo[i].getNomeEspecie().toLowerCase();
 
+        }
 
-            // Se a espécie ainda não estiver na lista, adiciona
-            if (!especiesUnicas.contains(especies[i])) {
-                especiesUnicas.add(especies[i]);
+        for (int j = 0; j < animaisArray.length; j++) {
+            if (!especiesEncontradas.contains(animaisArray[j])) {
+                especiesEncontradas.add(animaisArray[j]);
             }
-        }
-
-        // Converte a lista para um array
-        String[] arrayEspeciesUnicas = especiesUnicas.toArray(new String[0]);
-
-
-        return arrayEspeciesUnicas;
-    }
-
-
-
-
-    public String[] test2(Animal[] animal) {
-        String[] animaisArray = new String[animal.length];
-
-        for (int i = 0; i < animal.length; i++) {
-           animaisArray[i] = animal[i].getNomeEspecie().toLowerCase();
 
         }
 
+        animaisArray = especiesEncontradas.toArray(new String[0]);
         return animaisArray;
-
     }
-
 
 
 }
