@@ -2,6 +2,9 @@ package dominio;
 
 import dominio.Animal;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Laboratorio implements Ferramentas {
 
 
@@ -13,7 +16,7 @@ public class Laboratorio implements Ferramentas {
 
 
         for (int i = 0; i < completo.length; i++) {
-            if (completo[i] != null && completo[i].getNomeEspecie().equals(especieFiltrar)) {
+            if (completo[i] != null && completo[i].getNomeEspecie().equalsIgnoreCase(especieFiltrar)) {
 
                 especies[j] = completo[i];
 
@@ -35,38 +38,74 @@ public class Laboratorio implements Ferramentas {
         return especieFiltrada;
     }
 
-    @Override
+
+    //  public String[] classificaEspecie(Animal[] completo) {
+
+    //    String[] especiesClass = new String[completo.length];
+
+    //  for (int i = 0; i < completo.length - 1; i++) {
+    //    especiesClass[i] = completo[i].getNomeEspecie();
+    //      especiesClass[i + 1] = completo[i + 1].getNomeEspecie();
+
+    //    if (especiesClass[i].equalsIgnoreCase(especiesClass[i + 1])) {
+    //        especiesClass[i] = especiesClass[i + 1];
+    //        especiesClass[i + 1] = null;
+
+    //    }
+    // }
+
+    //for (int i = 0; i < especiesClass.length; i++) {
+    //        if (especiesClass[i] == null) {
+    //         especiesClass[i] = especiesClass[i + 1];
+    //           especiesClass[i + 1] = null;
+//
+    //      }
+//
+    //    }
+
+
+    //   return especiesClass;
+    // }
     public String[] classificaEspecie(Animal[] completo) {
-        int k = 1;
-        Animal[] especiesClass = new Animal[completo.length];
+        // Lista para armazenar espécies únicas
+        List<String> especiesUnicas = new ArrayList<>();
+        String[] especies = new String[completo.length];
+        especies = test2(completo);
+
+        // Verifica cada animal no array
+        for (int i = 0; i < completo.length; i++) {
 
 
-        for (int i = completo.length - 1; i >= 1; i--) {
-            especiesClass[i] = completo[i];
-            especiesClass[i-1] = completo[i-1];
-            if (completo[i].getNomeEspecie().equals(completo[i - 1].getNomeEspecie())) {
-                especiesClass[i] = null;
-                continue;
-
+            // Se a espécie ainda não estiver na lista, adiciona
+            if (!especiesUnicas.contains(especies[i])) {
+                especiesUnicas.add(especies[i]);
             }
-            k++;
-        }
-        String[] especies = new String[k];
-
-        for (int j = 0; j < especies.length; j++) {
-            if (completo[j] != null) {
-                especies[j] = completo[j].getNomeEspecie();
-            }
-
         }
 
-        return especies;
+        // Converte a lista para um array
+        String[] arrayEspeciesUnicas = especiesUnicas.toArray(new String[0]);
+
+
+        return arrayEspeciesUnicas;
     }
 
-    public void test(Animal[] completo) {
 
+
+
+    public String[] test2(Animal[] animal) {
+        String[] animaisArray = new String[animal.length];
+
+        for (int i = 0; i < animal.length; i++) {
+           animaisArray[i] = animal[i].getNomeEspecie().toLowerCase();
+
+        }
+
+        return animaisArray;
 
     }
+
 
 
 }
+
+

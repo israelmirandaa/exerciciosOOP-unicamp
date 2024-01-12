@@ -5,10 +5,14 @@ import dominio.*;
 public class Exercicio1Test01 {
     public static void main(String[] args) {
         Mamifero cachorro = new Mamifero("Fulano", "Mamifero");
-        Peixe peixe = new Peixe("Peixe espada", "Peixe");
+        Peixe peixeEspada = new Peixe("Peixe espada", "Peixe");
         Mamifero gato = new Mamifero("gato1", "Mamifero");
+        Peixe sardinha = new Peixe("Sardinha", "Peixe");
+        Peixe tubarao = new Peixe("Tubarao", "Peixe");
+        Mamifero girafa = new Mamifero("Girafa", "MamIFero");
+        Mamifero cavalo = new Mamifero("Cavalo", "mamifero");
 
-        Animal[] animalArray = new Animal[]{peixe, cachorro, gato};
+        Animal[] animalArray = new Animal[]{peixeEspada, sardinha, cachorro, gato, girafa, cavalo, tubarao};
         Laboratorio laboratorio = new Laboratorio();
 
 
