@@ -11,19 +11,21 @@ public class Exercicio1Test01 {
         Peixe tubarao = new Peixe("Tubarao", "Peixe");
         Mamifero girafa = new Mamifero("Girafa", "MamIFero");
         Mamifero cavalo = new Mamifero("Cavalo", "mamifero");
+        Aves pavao = new Aves("Pavao", "Aves");
+        Aves papagaio = new Aves("Papagaio", "Aves");
 
-        Animal[] animalArray = new Animal[]{peixeEspada, sardinha, cachorro, gato, girafa, cavalo, tubarao};
+
+        Animal[] animalArray = new Animal[]{cachorro, peixeEspada, papagaio, sardinha, girafa, cavalo, gato,  pavao, tubarao};
         Laboratorio laboratorio = new Laboratorio();
 
 
-
-
-
-       for (Resultado result : test(animalArray, laboratorio)) {
-           System.out.println(result.getNomeEspecie());
-           System.out.println(result.getQuantidade());
-       }
+        for (Resultado result : test(animalArray, laboratorio)) {
+            System.out.println(result.getNomeEspecie());
+            System.out.println(result.getQuantidade());
+        }
     }
+
+
 
 
     public static Resultado[] test(Animal[] animal, Ferramentas ferramentas) {
@@ -38,14 +40,12 @@ public class Exercicio1Test01 {
         for (int i = 0; i < especiesEncontrados.length; i++) {
             retur = ferramentas.filtraEspecie(especies, especiesEncontrados[i]);
             n[i] = retur.length;
-            resultados[i] = new Resultado(retur[0].getNomeEspecie(),n[i]);
+            resultados[i] = new Resultado(retur[0].getNomeEspecie(), n[i]);
         }
 
         return resultados;
 
     }
-
-
 
 
 }

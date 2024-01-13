@@ -2,9 +2,8 @@ package dominio;
 
 import dominio.Animal;
 
-public class Mamifero implements Animal {
-    private String nome;
-    private String especie;
+public class Mamifero extends Animais implements Animal {
+
 
     public Mamifero(String nome, String especie) {
         this.nome = nome;
@@ -13,14 +12,4 @@ public class Mamifero implements Animal {
     }
 
 
-
-    @Override
-    public String getNomeEspecie() {
-        return this.especie;
-    }
-
-    @Override
-    public String getNomeAnimal() {
-        return this.nome;
-    }
 }
