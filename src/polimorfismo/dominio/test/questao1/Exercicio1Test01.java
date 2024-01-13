@@ -16,7 +16,7 @@ public class Exercicio1Test01 {
         Aves papagaio = new Aves("Papagaio", "Aves");
 
 
-        Animal[] animalArray = new Animal[]{cachorro, peixeEspada, papagaio, sardinha, girafa, cavalo, gato,  pavao, tubarao};
+        Animal[] animalArray = new Animal[]{cachorro, peixeEspada, sardinha, papagaio, girafa, cavalo, gato,  pavao, tubarao};
         Laboratorio laboratorio = new Laboratorio();
 
 
