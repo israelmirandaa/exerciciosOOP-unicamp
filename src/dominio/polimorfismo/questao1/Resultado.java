@@ -1,4 +1,4 @@
-package test;
+package dominio.polimorfismo.questao1;
 
 public class Resultado {
     private String nomeEspecie;

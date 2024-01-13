@@ -1,6 +1,6 @@
-package test;
+package test.questao1;
 
-import dominio.*;
+import dominio.polimorfismo.questao1.*;
 
 public class Exercicio1Test01 {
     public static void main(String[] args) {

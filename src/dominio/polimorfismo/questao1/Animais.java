@@ -1,6 +1,6 @@
-package dominio;
+package dominio.polimorfismo.questao1;
 
-public class Animais implements Animal{
+public class Animais implements Animal {
     protected String nome;
     protected String especie;
 
