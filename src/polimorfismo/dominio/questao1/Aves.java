@@ -1,7 +1,4 @@
-package dominio.polimorfismo.questao1;
-
-import dominio.polimorfismo.questao1.Animais;
-import dominio.polimorfismo.questao1.Animal;
+package polimorfismo.dominio.questao1;
 
 public class Aves extends Animais implements Animal {
 

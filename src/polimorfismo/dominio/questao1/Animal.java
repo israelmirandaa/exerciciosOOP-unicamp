@@ -1,4 +1,4 @@
-package dominio.polimorfismo.questao1;
+package polimorfismo.dominio.questao1;
 
 public interface Animal {
      String getNomeEspecie();

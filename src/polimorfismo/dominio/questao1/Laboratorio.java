@@ -1,7 +1,4 @@
-package dominio.polimorfismo.questao1;
-
-import dominio.polimorfismo.questao1.Animal;
-import dominio.polimorfismo.questao1.Ferramentas;
+package polimorfismo.dominio.questao1;
 
 import java.util.ArrayList;
 import java.util.List;
