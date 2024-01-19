@@ -1,8 +1,8 @@
 package polimorfismo.dominio.questao2;
 
 public class ItemOrcamento {
-        private String historico; // historico do item
-        private float valor; // valor do item
+        private String historico;
+        private float valor;
         public ItemOrcamento(String historico, float valor) {
             this.historico = historico;
             this.valor = valor;
