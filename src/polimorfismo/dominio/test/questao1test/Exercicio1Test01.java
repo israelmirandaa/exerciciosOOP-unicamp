@@ -1,6 +1,5 @@
-package polimorfismo.dominio.test.questao1;
+package polimorfismo.dominio.test.questao1test;
 
-import polimorfismo.dominio.questao1.*;
 import polimorfismo.dominio.questao1.*;
 
 public class Exercicio1Test01 {
